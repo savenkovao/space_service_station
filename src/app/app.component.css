@@ -3,3 +3,75 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: 100vh;
+}
+.left-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-grow:1;
+  padding: 15px;
+  background-color: cornflowerblue;
+}
+
+.central-bar {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-grow:7;
+  padding: 15px;
+  background-color: #60ede5;
+}
+
+.right-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-grow:1;
+  padding: 15px;
+  background-color: #edc4ae;
+}
+
+.bar-item {
+  border: 1px solid black;
+}
+.bar-item-1 {
+  flex-grow: 1;
+}
+.bar-item-2 {
+  flex-grow: 2;
+}
+.bar-item-3 {
+  flex-grow: 3;
+}
+
+stats-bar,
+crash-bar,
+info-bar,
+game-pad,
+tool-bar,
+dialog-bar {
+  width: 100%;
+}
+
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-bar {
+    flex-direction: row;
+  }
+  .right-bar {
+    flex-direction: row;
+  }
+}
+
