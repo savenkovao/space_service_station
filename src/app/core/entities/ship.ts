@@ -1,36 +1,52 @@
-interface IShip {
-  id: number;
-  type: string; //'battle-ship'|'merchant-ship'|'tourist ship'
-  name: string; //from 'names' array
-  pilot: string; //from 'pilots names' array
-  details: IDetails;
+// interface IDetail {
+//   cockpit: DetailState;
+//   deck: DetailState;
+//   leftTurbine: DetailState;
+//   rightTurbine: DetailState;
+//   engine: DetailState;
+// }
 
+enum DetailState {
+  serviceable = 0,
+  damaged = 1,
+  broken = 2
 }
 
-interface IDetails {
-  cockpit: IDetailState;
-  deck: IDetailState;
-  leftTurbine: IDetailState;
-  rightTurbine: IDetailState;
-  engine: IDetailState;
+enum ShipTypes {
+  tourist = 0,
+  merchant = 1,
+  battle = 2
 }
 
-interface IDetailState {
-  state: string; // 'serviceable', 'damaged', 'broken'
+class Detail {
+  public cockpit: DetailState;
+  public deck: DetailState;
+  public leftTurbine: DetailState;
+  public rightTurbine: DetailState;
+  public engine: DetailState;
+
+  constructor(details: number []) {
+    this.cockpit = details[0] || 0;
+    this.deck = details[1] || 0;
+    this.leftTurbine = details[2] || 0;
+    this.rightTurbine = details[3] || 0;
+    this.engine = details[4] || 0;
+  }
 }
 
-export class Ship implements IShip {
+export class Ship {
   public id: number;
-  public type: string;
+  public type: ShipTypes;
   public name: string;
   public pilot: string;
-  public details: IDetails;
+  public details: Detail;
 
-  constructor(ship:any){
+  constructor(ship:any) {
     this.id = ship.id || null;
     this.type = ship.type || null;
     this.name = ship.name || null;
     this.pilot = ship.pilot || null;
-    this.details = ship.details || null;
+    // this.details = ship.details || null;
+    this.details = new Detail(ship.details);
   }
 }

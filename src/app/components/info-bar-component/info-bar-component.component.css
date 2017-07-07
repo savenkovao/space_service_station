@@ -1,0 +1,8 @@
+.info-list {}
+.info-list__item {
+  list-style: none;
+  margin-top: 15px;
+}
+.info-list__item span {
+  font-weight: bold;
+}
