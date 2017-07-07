@@ -7,15 +7,15 @@
 // }
 
 enum DetailState {
-  serviceable = 0,
-  damaged = 1,
-  broken = 2
+  SERVICEABLE = 0,
+  DAMAGED = 1,
+  BROKEN = 2
 }
 
 enum ShipTypes {
-  tourist = 0,
-  merchant = 1,
-  battle = 2
+  TOURIST = 0,
+  MERCHANT = 1,
+  BATTLE = 2
 }
 
 class Detail {

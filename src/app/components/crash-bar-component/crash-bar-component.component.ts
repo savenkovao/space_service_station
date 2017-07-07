@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShipInfo } from './../../mock/ship';
 
 @Component({
   selector: 'crash-bar',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./crash-bar-component.component.css']
 })
 export class CrashBarComponentComponent implements OnInit {
+  private shipInfoServ;
+  public shipInfo;
 
-  constructor() { }
+  constructor() {
+    this.shipInfoServ = new ShipInfo();
+    this.shipInfo = this.shipInfoServ.getNewShip();
+  }
 
   ngOnInit() {
   }

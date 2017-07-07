@@ -1,8 +1,19 @@
-.info-list {}
+.bar-heading {
+  margin-top: 0;
+  padding-bottom: 10px;
+  color: #eabb66;
+  text-align: center;
+}
+
+.info-list {
+  margin: 0;
+  padding: 0;
+}
 .info-list__item {
   list-style: none;
   margin-top: 15px;
 }
-.info-list__item span {
+.info-list__info {
   font-weight: bold;
+  color: #eabb66;
 }

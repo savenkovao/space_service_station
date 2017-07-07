@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Ship } from './../../core/entities/ship';
+// import { Ship } from './../../core/entities/ship';
+import { ShipInfo } from './../../mock/ship';
 
 @Component({
   selector: 'info-bar',
@@ -10,28 +11,32 @@ import { Ship } from './../../core/entities/ship';
 
 
 export class InfoBarComponentComponent implements OnInit {
-  public newShip: Ship;
+  // public newShip: Ship;
+  private shipInfoServ;
+  public shipInfo;
 
   constructor() {
-    this.newShip = new Ship({
-        id: 1,
-        type: 'tourist',
-        name: "Honour",
-        pilot: "Peter Quill",
-        details: [
-          'serviceable',
-          'serviceable',
-          'broken',
-          'serviceable',
-          'damaged'
-        ]
-      }
-    );
+    this.shipInfoServ = new ShipInfo();
+    this.shipInfo = this.shipInfoServ.getNewShip();
+
+    // this.newShip = new Ship({
+    //     id: 1,
+    //     type: 'TOURIST',
+    //     name: "Honour",
+    //     pilot: "Peter Quill",
+    //     details: [
+    //       'SERVICEABLE',
+    //       'SERVICEABLE',
+    //       'BROKEN',
+    //       'SERVICEABLE',
+    //       'DAMAGED'
+    //     ]
+    //   }
+    // );
   }
 
   ngOnInit() {
-    console.log( this.newShip );
-    console.log( this.newShip.details );
+    console.log(this.shipInfo);
   }
 
 }
