@@ -12,3 +12,18 @@ p {
 p:last-child {
   color: #eabb66;
 }
+
+.stats-table {
+  width: 100%;
+  text-align: center;
+}
+
+th, td {
+  width: 33%;
+}
+
+td {
+  padding-top: 15px;
+  color: #eabb66;
+  font-size: 18px;
+}

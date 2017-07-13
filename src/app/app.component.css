@@ -17,7 +17,7 @@ h1 {
   align-items: stretch;
   flex-grow:1;
   padding: 15px;
-  background-color: #263238;
+  background-color: #333646;
   flex-shrink: 1;
   flex-basis: 25%;
 }
@@ -28,7 +28,7 @@ h1 {
   align-items: stretch;
   flex-grow:7;
   padding: 15px;
-  background-color: #263238;
+  background-color: #333646;
   flex-shrink: 1;
   flex-basis: 60%;
 }
@@ -40,7 +40,7 @@ h1 {
   align-items: stretch;
   flex-grow:1;
   padding: 15px;
-  background-color: #263238;
+  background-color: #333646;
   flex-shrink: 1;
   flex-basis: 25%;
 }

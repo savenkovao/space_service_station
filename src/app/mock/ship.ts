@@ -1,11 +1,14 @@
 import { Ship } from './../core/entities/ship';
 
-export class ShipInfo {
-  public newShip: Ship;
+let newShip = null;
+
+class SingleShip {
 
   constructor() {
-    this.newShip = new Ship({
-        id: 1,
+
+    if(!newShip){
+      newShip = new Ship({
+        id: Math.round(Math.random() * (100 - 1) + 1),
         type: 'TOURIST',
         name: "Honour",
         pilot: "Peter Quill",
@@ -17,9 +20,10 @@ export class ShipInfo {
           'DAMAGED'
         ]
       });
-  }
+    }
 
-  getNewShip(){
-    return this.newShip;
+    return newShip;
   }
 }
+
+export const ShipInfo = new SingleShip();

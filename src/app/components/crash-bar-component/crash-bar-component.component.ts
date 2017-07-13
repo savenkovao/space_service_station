@@ -7,13 +7,25 @@ import { ShipInfo } from './../../mock/ship';
   styleUrls: ['./crash-bar-component.component.css']
 })
 export class CrashBarComponentComponent implements OnInit {
-  private shipInfoServ;
   public shipInfo;
+  private damaged = "DAMAGED";
+  private broken = "BROKEN";
 
   constructor() {
-    this.shipInfoServ = new ShipInfo();
-    this.shipInfo = this.shipInfoServ.getNewShip();
+    this.shipInfo = ShipInfo;
   }
+
+  getDamagedBoolean(str) {
+    if (str == this.damaged) {
+      return true;
+    }
+  }
+  getBrokenBoolean(str) {
+    if (str == this.broken) {
+      return true;
+    }
+  }
+
 
   ngOnInit() {
   }

@@ -1,29 +1,42 @@
 <h2 class="bar-heading">Details crash info</h2>
 <ol class="info-list">
-  <li
-    class="info-list__item"
-    [ngClass]="{state:true}"
-  >Cockpit: <span class="info-list__info">{{shipInfo.details.cockpit}}</span></li>
+  <li class="info-list__item">
+    Cockpit:
+    <span
+      class="info-list__info"
+      [class.damaged]="getDamagedBoolean(shipInfo.details.cockpit)"
+      [class.broken]="getBrokenBoolean(shipInfo.details.cockpit)"
+
+    >{{shipInfo.details.cockpit}}</span></li>
+  <li class="info-list__item">Deck:
+    <span
+      class="info-list__info"
+      [class.damaged]="getDamagedBoolean(shipInfo.details.deck)"
+      [class.broken]="getBrokenBoolean(shipInfo.details.deck)"
+    >{{shipInfo.details.deck}}</span></li>
 
   <li
     class="info-list__item"
-    [ngClass]="{state:true}"
-  >Deck: <span class="info-list__info">{{shipInfo.details.deck}}</span></li>
+  >Left turbine: <span
+    class="info-list__info"
+    [class.damaged]="getDamagedBoolean(shipInfo.details.leftTurbine)"
+    [class.broken]="getBrokenBoolean(shipInfo.details.leftTurbine)"
+  >{{shipInfo.details.leftTurbine}}</span></li>
 
   <li
     class="info-list__item"
-    [ngClass]="{state:true}"
-  >Left turbine: <span class="info-list__info">{{shipInfo.details.leftTurbine}}</span></li>
+  >Right turbine: <span
+    class="info-list__info"
+    [class.damaged]="getDamagedBoolean(shipInfo.details.rightTurbine)"
+    [class.broken]="getBrokenBoolean(shipInfo.details.rightTurbine)"
+  >{{shipInfo.details.rightTurbine}}</span></li>
 
-  <li
-    class="info-list__item"
-    [ngClass]="{state:true}"
-  >Right turbine: <span class="info-list__info">{{shipInfo.details.rightTurbine}}</span></li>
-
-  <li
-    class="info-list__item"
-    [ngClass]="{state:true}"
-  >Engine: <span class="info-list__info">{{shipInfo.details.engine}}</span></li>
+  <li class="info-list__item">Engine:
+    <span
+    class="info-list__info"
+    [class.damaged]="getDamagedBoolean(shipInfo.details.engine)"
+    [class.broken]="getBrokenBoolean(shipInfo.details.engine)"
+  >{{shipInfo.details.engine}}</span></li>
 
 
 </ol>
