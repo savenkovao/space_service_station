@@ -1,6 +1,73 @@
+* {
+  box-sizing: border-box;
+}
 .bar-heading {
   margin-top: 0;
   padding-bottom: 10px;
   color: #eabb66;
   text-align: center;
+}
+.list-heading {
+  margin: 20px 0 10px;
+  color: #eabb66;
+  text-align: center;
+}
+
+.info-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin:0 auto;
+  padding: 0;
+}
+.info-list__item {
+  position: relative;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 20%;
+  padding: 60px 5px 10px;
+  list-style-type: none;
+  text-align: center;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  user-select: none;
+}
+
+.info-list__item:hover {
+  color: #eabb66;
+}
+
+.info-list__item::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-20px);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  opacity: 0.7;
+  transition: all 0.3s linear;
+}
+.cockpit::before {
+  background-color: #ff5040;
+}
+.deck::before {
+  background-color: #4a4bff;
+}
+.leftTurbine::before {
+  background-color: #55ffc3;
+}
+.rightTurbine::before {
+  background-color: #fff367;
+}
+.engine::before {
+  background-color: #ffc84f;
+}
+
+.info-list__item:hover::before {
+  opacity: 1;
+  box-shadow: 0 0 19px 0 rgba(255, 255, 255, 0.35);
 }

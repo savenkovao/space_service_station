@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Timr from 'timrjs';
 
 @Component({
   selector: 'stats-bar',
@@ -6,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stats-bar-component.component.css'],
 })
 
+
+
+
 export class StatsBarComponentComponent implements OnInit {
   public repairedShips = 3;
   public repairedDetails = 7;
   private date = new Date();
   private startDate = new Date();
   public time: string;
+  public timer = Timr();
 
   constructor() {
     this.getTime();
@@ -27,6 +32,7 @@ export class StatsBarComponentComponent implements OnInit {
 
 
   ngOnInit() {
+    // console.log(this.timer);
   }
 
 }
