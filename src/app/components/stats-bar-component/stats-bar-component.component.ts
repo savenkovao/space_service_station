@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import Timr from 'timrjs';
+import { StopWatchModule } from '../../core/services/stopwatch/stopwatch';
 
 @Component({
   selector: 'stats-bar',
@@ -13,10 +13,6 @@ import { Component, OnInit } from '@angular/core';
 export class StatsBarComponentComponent implements OnInit {
   public repairedShips = 3;
   public repairedDetails = 7;
-  private date = new Date();
-  private startDate = new Date();
-  public time: string;
-  // public timer = Timr();
 
   constructor() {
     this.getTime();
@@ -24,15 +20,10 @@ export class StatsBarComponentComponent implements OnInit {
 
 
   getTime(){
-    setInterval( () => {
-      this.date = new Date();
-      this.time = this.date.getMinutes() + ' : '+ this.date.getSeconds() + ' : '+ (this.date.getMilliseconds()/10).toFixed(0);
-    }, 10);
   }
 
 
   ngOnInit() {
-    // console.log(this.timer);
   }
 
 }

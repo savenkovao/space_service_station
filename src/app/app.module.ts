@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { StopWatchModule } from './core/services/stopwatch/stopwatch';
 
 import { AppComponent } from './app.component';
 import { StatsBarComponentComponent } from './components/stats-bar-component/stats-bar-component.component';
@@ -19,12 +20,13 @@ import { GamePadComponentComponent } from './components/game-pad-component/game-
     InfoBarComponentComponent,
     ToolBarComponentComponent,
     DialogBarComponentComponent,
-    GamePadComponentComponent,
+    GamePadComponentComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    StopWatchModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
