@@ -13,30 +13,16 @@ import { StopWatchService } from './stopwatch.service';
               <span *ngIf="!started">Start</span>
               <span *ngIf="started">Pause</span>
             </button>
-            <button (click)="reset()">Reset</button>
-            <button (click)="lap()">Split</button>
           </div>
-            <div class="laps"
-                *ngIf="stopwatchService.laps.length > 1">
-                <div class="lap"
-                    *ngFor="let lap of stopwatchService.laps; let i = index; let last = last;">
-                    
-                    <div>Round {{ i }}</div>
-                    <div>{{ formatTime(lap.startMs) }}</div>
-                    <div *ngIf="last">{{ formatTime(time) }}</div>
-                    <div *ngIf="!last">{{ formatTime(lap.endMs) }}</div>
-                </div>
-            </div>
         </div>
         `,
-    // styleUrls: ['app/core/services/stopwatch/stopwatch.css']
+    // styleUrls: ['./stopwatch.css']
 })
 
 export class StopWatchComponent {
     public started: boolean;
-    // public stopwatchService: StopWatchService;
     public time: number;
-    public autoStart= true;
+    public autoStart= false;
 
     private timer: any;
 
@@ -114,6 +100,7 @@ export class StopWatchComponent {
   exports: [StopWatchComponent],
   declarations: [StopWatchComponent]
 })
+
 export class StopWatchModule {
   static forRoot() {
     return {

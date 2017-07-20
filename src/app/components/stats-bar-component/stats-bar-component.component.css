@@ -15,3 +15,46 @@
   color: #eabb66;
   text-align: center;
 }
+.start-popup {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  max-width: 500px;
+  min-width: 200px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333646;
+  border: 1px solid #75490b;
+  box-shadow: 3px 3px 27px 0px #544444;
+  z-index: 10;
+}
+
+button {
+  display: inline-block;
+  margin: 5px;
+  padding: 10px ;
+  color: gray;
+  background-color: lightgray;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: -1px -1px black, 1px 1px white;
+  border-radius: 7px;
+  box-shadow: 0 .2em gray;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: transparent auto 5px;
+}
+
+.disabled {
+  display: none;
+}
+
